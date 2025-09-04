@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from "react";
-import { Input } from "./components/ui/input";
 
 import { 
   getPersonData, 
@@ -43,37 +41,40 @@ function PersonSpread({ label, onPersonDataChange }) {
       <div className="input-row">
         <div className="input-group">
           <label>Month</label>
-          <Input 
+          <input 
             type="number" 
             min="1" 
             max="12" 
             value={month} 
             onChange={(e) => setMonth(e.target.value)} 
             placeholder="1-12"
+            className="input-field"
           />
         </div>
         
         <div className="input-group">
           <label>Day</label>
-          <Input 
+          <input 
             type="number" 
             min="1" 
             max="31" 
             value={day} 
             onChange={(e) => setDay(e.target.value)} 
             placeholder="1-31"
+            className="input-field"
           />
         </div>
         
         <div className="input-group">
           <label>Year</label>
-          <Input 
+          <input 
             type="number" 
             min="1900" 
             max="2100" 
             value={year} 
             onChange={(e) => setYear(e.target.value)} 
             placeholder="YYYY"
+            className="input-field"
           />
         </div>
       </div>

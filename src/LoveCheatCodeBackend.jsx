@@ -1,4 +1,3 @@
-
 import DualSpreadUI from "./DualSpreadUI";
 import "./styles.css";
 
