@@ -70,6 +70,8 @@ export default function LoveCheatCodeApp() {
             youData={youData}
             loveInterestData={loveInterestData}
             onBack={handleBackToForm}
+            savedProfiles={savedProfiles}
+            currentProfileName={currentProfileName}
           />
         );
       default:

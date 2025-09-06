@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getPersonData, getCompositeDescription, getCardImagePath } from '../utils/cardUtils';
 import FlippableCard from './FlippableCard';
+import ChatGPTBox from './ChatGPTBox';
 
-export default function LoveReadingPage({ youData, loveInterestData, onBack }) {
+export default function LoveReadingPage({ youData, loveInterestData, onBack, savedProfiles, currentProfileName }) {
   const [youPersonData, setYouPersonData] = useState(null);
   const [loveInterestPersonData, setLoveInterestPersonData] = useState(null);
   const [youAge, setYouAge] = useState(youData ? new Date().getFullYear() - youData.year : 0);
@@ -226,6 +227,15 @@ export default function LoveReadingPage({ youData, loveInterestData, onBack }) {
           <p>{getComposite()}</p>
         </div>
       </div>
+
+      {/* ChatGPT Q&A Box */}
+      <ChatGPTBox 
+        personAData={youPersonData}
+        personBData={loveInterestPersonData}
+        compositeData={getComposite()}
+        savedProfiles={savedProfiles}
+        currentProfileName={currentProfileName}
+      />
     </div>
   );
 }

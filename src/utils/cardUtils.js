@@ -81,7 +81,7 @@ export function getCompositeDescription(birthCardA, birthCardB) {
     return "Wild Card... No composite available!";
   }
   
-  return composite.description;
+  return composite;
 }
 
 // STEP 7: Return Card Descriptions for All Forecast Cards
