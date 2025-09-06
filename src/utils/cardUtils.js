@@ -10,7 +10,15 @@ const birthdateToCard = birthdateToCardData;
 
 // STEP 2: Lookup Birth Cards
 export function findBirthCard(month, day) {
-  const key = `${month}-${day}`;
+  // Convert numeric month to month name
+  const monthNames = [
+    '', 'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  
+  const monthName = monthNames[month];
+  const key = `${monthName} ${day}`;
+  
   return birthdateToCard[key] || "5D"; // Fallback to 5D if not found
 }
 
@@ -125,6 +133,13 @@ export function getPersonData(month, day, year) {
   const birthCard = findBirthCard(month, day);
   const age = calculateAge(year);
   const allDescriptions = getAllCardDescriptions(birthCard, age);
+  
+  // Debug logging
+  console.log(`Getting person data for ${month}/${day}/${year}:`);
+  console.log(`Birth card: ${birthCard}`);
+  console.log(`Age: ${age}`);
+  console.log(`Yearly outlook cards:`, allDescriptions.yearly_outlook);
+  console.log(`Planetary cycles:`, allDescriptions.planetary_cycles);
   
   return {
     birthdate: `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`,
