@@ -7,17 +7,19 @@ import {
   getCardProfile 
 } from "./utils/cardUtils";
 
-function PersonProfile({ personData, onPersonDataChange }) {
+function PersonProfile({ personData, onPersonDataChange, personLabel }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editName, setEditName] = useState("");
   const [editAge, setEditAge] = useState("");
 
   useEffect(() => {
     if (personData) {
-      setEditName("Skye"); // Default name, could be made dynamic
+      // Set default name based on person label
+      const defaultName = personLabel === "Person A" ? "Skye" : "Alex";
+      setEditName(defaultName);
       setEditAge(personData.age.toString());
     }
-  }, [personData]);
+  }, [personData, personLabel]);
 
   const handleSave = () => {
     setIsEditing(false);
@@ -114,13 +116,13 @@ function PersonSpread({ label, onPersonDataChange }) {
 
   return (
     <>
-      <PersonProfile personData={personData} onPersonDataChange={onPersonDataChange} />
+      <PersonProfile personData={personData} onPersonDataChange={onPersonDataChange} personLabel={label} />
       
       {personData && (
         <>
           <div className="spread-container">
             <h2>Yearly Energetic Outlook</h2>
-            <h3>Skye's energetic outlook for age {personData.age}</h3>
+            <h3>{label}'s energetic outlook for age {personData.age}</h3>
             <div className="card-row">
               {personData.yearly_outlook.map((card, i) => (
                 <div className="card-box" key={i}>
@@ -208,11 +210,27 @@ function PersonSpread({ label, onPersonDataChange }) {
 }
 
 export default function DualSpreadUI() {
-  const [personData, setPersonData] = useState(null);
+  const [personAData, setPersonAData] = useState(null);
+  const [personBData, setPersonBData] = useState(null);
+
+  const getComposite = () => {
+    if (!personAData || !personBData) {
+      return "Please enter both birth dates to see your composite reading.";
+    }
+    
+    return getCompositeDescription(personAData.birthCard, personBData.birthCard);
+  };
 
   return (
     <div className="dual-ui">
-      <PersonSpread label="Enter Birth Information" onPersonDataChange={setPersonData} />
+      <PersonSpread label="Person A" onPersonDataChange={setPersonAData} />
+      <PersonSpread label="Person B" onPersonDataChange={setPersonBData} />
+      
+      <div className="composite-output">
+        <h2>Your Vibe</h2>
+        <p>{getComposite()}</p>
+        <p>This composite reading shows how your energies combine and what this means for your relationship.</p>
+      </div>
     </div>
   );
 }
