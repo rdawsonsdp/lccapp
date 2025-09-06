@@ -1,15 +1,30 @@
-/* Basic styles for Love Cheat Code App */
+/* Love Cheat Code App - Professional Cardology Design */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
 }
 
 .app-container h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.5px;
 }
 
 .dual-ui {
@@ -19,21 +34,83 @@
 }
 
 .spread-container {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background: #f9f9f9;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  border: none;
 }
 
 .spread-container h2 {
-  color: #555;
-  margin-bottom: 20px;
+  color: #8e44ad;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .spread-container h3 {
-  color: #666;
+  color: #7f8c8d;
   margin: 25px 0 15px 0;
-  font-size: 18px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Profile Section Styling */
+.profile-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.profile-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.profile-value {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-input {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+
+.profile-input:focus {
+  outline: none;
+  background: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #8e44ad;
 }
 
 .input-row {
@@ -50,38 +127,86 @@
 
 .input-group label {
   display: block;
-  margin: 0 0 5px 0;
-  font-weight: bold;
-  color: #666;
-  font-size: 14px;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .input-field {
   width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 12px 16px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
   margin-bottom: 15px;
+  background: white;
+  transition: all 0.3s ease;
 }
 
 .input-field:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+  border-color: #8e44ad;
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+}
+
+/* Button Styling */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #229954;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
 }
 
 .person-info {
-  background: #e8f4fd;
-  padding: 15px;
-  border-radius: 6px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
   margin: 20px 0;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #8e44ad;
 }
 
 .person-info p {
-  margin: 5px 0;
-  color: #333;
+  margin: 8px 0;
+  color: #2c3e50;
+  font-size: 1rem;
 }
 
 .placeholder-message {
@@ -94,37 +219,46 @@
 .card-row, .planet-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin: 20px 0;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: center;
 }
 
 .card-box, .planet-card {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 6px;
   background: white;
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
-  min-width: 120px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 140px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ecf0f1;
 }
 
 .card-box:hover, .planet-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-box img, .planet-card img {
-  width: 80px;
-  height: 120px;
+  width: 90px;
+  height: 135px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  border: 1px solid #eee;
-  transition: transform 0.2s;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-box img:hover, .planet-card img:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.planet-card.active {
+  border: 3px solid #8e44ad;
+  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2);
 }
 
 .placeholder-card {
@@ -142,37 +276,65 @@
 }
 
 .label {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #555;
-  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .planet-card .label {
-  font-size: 11px;
-  color: #007bff;
+  font-size: 0.8rem;
+  color: #8e44ad;
+  font-weight: 700;
+}
+
+.planet-date {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
 .composite-output {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background: #f0f8ff;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 30px;
   text-align: center;
+  border: none;
 }
 
 .composite-output h2 {
-  color: #007bff;
-  margin-bottom: 15px;
+  color: #8e44ad;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .composite-output p {
-  margin: 10px 0;
-  line-height: 1.5;
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #2c3e50;
+  font-size: 1rem;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+  
+  .app-container h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .spread-container, .profile-section {
+    padding: 20px;
+  }
+  
   .input-row {
     flex-direction: column;
   }
@@ -183,23 +345,31 @@
   
   .card-row, .planet-row {
     justify-content: center;
+    gap: 15px;
   }
   
   .card-box, .planet-card {
-    min-width: 100px;
+    min-width: 120px;
+    padding: 12px;
   }
   
   .card-box img, .planet-card img {
-    width: 60px;
-    height: 90px;
+    width: 70px;
+    height: 105px;
   }
   
   .placeholder-card {
-    width: 60px;
-    height: 90px;
+    width: 70px;
+    height: 105px;
   }
   
-  .spread-container {
-    padding: 15px;
+  .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .profile-value, .profile-input {
+    font-size: 1.1rem;
   }
 }

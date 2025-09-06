@@ -99,10 +99,18 @@ export function getAllCardDescriptions(birthCard, age) {
   }));
   
   // Planetary Cycles descriptions from Card to Activities LCC
-  const planetaryCycles = forecast.planetary_cycles.map(card => ({
-    ...card,
-    activities: activitiesData[card.code] || "No data available"
-  }));
+  const planetaryCycles = forecast.planetary_cycles.map((card, index) => {
+    // Generate dates for 2025 (current year)
+    const startDate = new Date(2025, 0, 22); // January 22, 2025
+    const periodStart = new Date(startDate.getTime() + (index * 52 * 24 * 60 * 60 * 1000));
+    const formattedDate = `${(periodStart.getMonth() + 1).toString().padStart(2, '0')}/${periodStart.getDate().toString().padStart(2, '0')}/${periodStart.getFullYear()}`;
+    
+    return {
+      ...card,
+      date: formattedDate,
+      activities: activitiesData[card.code] || "No data available"
+    };
+  });
   
   return {
     birthCard: birthCardProfile,
