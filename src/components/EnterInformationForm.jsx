@@ -58,7 +58,9 @@ export default function EnterInformationForm({ onRevealMatch, savedProfiles, onS
         year: parseInt(loveInterestYear)
       };
 
-      onRevealMatch(youData, loveInterestData);
+      // Create a profile name for this reading
+      const profileName = `${youName} & ${loveInterestName}`;
+      onRevealMatch(youData, loveInterestData, profileName);
     } else {
       alert('Please fill in all fields for both people.');
     }

@@ -9,6 +9,7 @@ export default function LoveCheatCodeApp() {
   const [savedProfiles, setSavedProfiles] = useState([]);
   const [youData, setYouData] = useState(null);
   const [loveInterestData, setLoveInterestData] = useState(null);
+  const [currentProfileName, setCurrentProfileName] = useState(null);
 
   const handleStart = () => {
     setCurrentPage('form');
@@ -18,9 +19,10 @@ export default function LoveCheatCodeApp() {
     setCurrentPage('form');
   };
 
-  const handleRevealMatch = (you, loveInterest) => {
+  const handleRevealMatch = (you, loveInterest, profileName = null) => {
     setYouData(you);
     setLoveInterestData(loveInterest);
+    setCurrentProfileName(profileName || `${you.name || 'You'} & ${loveInterest.name || 'Your Love Interest'}`);
     setCurrentPage('reading');
   };
 
@@ -41,7 +43,7 @@ export default function LoveCheatCodeApp() {
   };
 
   const handleLoadProfile = (profile) => {
-    // This will be handled by the form component
+    setCurrentProfileName(profile.name);
     console.log('Loading profile:', profile);
   };
 
